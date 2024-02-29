@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% block title %}About Page {% endblock title %}
+{% block head %}
+<style>
+  .column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+{% endblock head %}
+
+{% block body %}
+{% load static %}
+<div class="about-section">
+  <h1>About Us</h1>
+  <p>We started our journey from July 2019.</p>
+  <p>And at the last we pause our most enjoyable time on May 2022.</p>
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src='{% static "collection/img3.jpg" %}' height="250px" alt="Jane" style="width:100%">
+      <div class="container">
+        <h2>Microbiology Students</h2>
+        <p class="title">Scholar Students</p>
+        <p>We explore the invisible world, decoding the mysteries of tiny organisms.</p>
+        <p>microbiology@students.com</p>
+        <a href="mbdept"><button class="button">See more</button></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src='{% static "collection/img2.jpg" %}' height="250px" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2>Arts Students</h2>
+        <p class="title">Smart Ones</p>
+        <p>We paint the world with their creativity, embracing diverse perspectives and expressions.</p>
+        <p>arts@students.com</p>
+        <a href="adept"><button class="button">See more</button></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src='{% static "collection/img1.jpg" %}' height="250px" alt="John" style="width:100%">
+      <div class="container">
+        <h2>CS & Math Students</h2>
+        <p class="title">Designer</p>
+        <p>We are the architects of digital innovation, shaping the future with algorithms and equations.</p>
+        <p>csmth@students.com</p>
+        <a href="cmdept"><button class="button">See more</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}

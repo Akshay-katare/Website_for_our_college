@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %} Contact Us{% endblock title %}
+{% block head %}
+
+<style>
+  h1{
+  text-align:center;
+  }
+#message{
+background-color:yellow;
+padding-left:150px;
+}
+.carousel-inner{
+padding-bottom:10px;
+}
+    body{
+   background-color: #474e5d;
+    }
+    .container{
+        box-sizing: border-box;
+    border-radius: 15px}
+</style>
+{% endblock head %}
+{% block body %}
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/static/collection/tele.jpg" class="d-block w-100 px-4" alt="...">
+      <h1>Contact Us</h1>
+      <div id="message" style="display: none;"></div>
+      <div class="container" style="background-color: aliceblue;">
+        <form action="contacts"  method="POST" id="myForm">
+          {% csrf_token %}
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label>Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter e-mail address" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter phone number" required>
+          </div>
+          <div class="form-group">
+            <label for="desc">What is your doubt?</label>
+            <textarea class="form-control" id="desc" name="desc" rows="3" required></textarea>
+          </div>
+          <button type="Submit" class="btn btn-primary" style="margin: 10px; box-sizing: border-box; border-radius: 5px;">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock body %}
